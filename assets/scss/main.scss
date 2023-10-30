@@ -1,0 +1,194 @@
+//Reset css
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+// Navbar start
+#navbar{
+    background: #F6F1EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    i{
+        font-size: 1.2rem;
+        color: #696969;
+    }
+    .nav-left{
+       display: flex;
+       align-items: center;
+       gap: 20px;
+
+       .menu{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        .hamburger_menu{
+            // height: 20px;
+            width: 22px;
+            background:none;
+            display: block;
+            border: none;
+            outline: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            .bar{
+                width: 100%;
+                height: 2px;
+                margin: 3px 0;
+                background-color: #000;
+                transition: all .4s ease;
+            }
+
+            &.active .bar1{
+                transform: rotate(-45deg) translate(-6px, 8px);
+                transition: all .4s ease;
+
+            }
+            &.active .bar2{
+                max-height: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: max-height 0.2s ease, opacity 0.2s ease, visibility 0.2s ease 0.2s;
+            }
+            &.active .bar3{
+                transform: rotate(45deg) translate(-1px, -4px);
+                transition: all .4s ease;
+
+            }
+        }
+
+       }
+       input{
+        padding: 10px ;
+        width: 100px;
+       }
+    }
+
+    .logo{
+        width: 80px;
+        cursor: pointer;
+    }
+
+    .nav-right{
+        display: flex;
+        gap: 40px;
+
+        .account{
+            display: flex;
+            gap: 10px;
+        }
+
+        .cart{
+            display: flex;
+            gap: 10px;
+        }
+    }
+
+    @media screen and (max-width:992px) {
+        .nav-left {
+            a,input{
+                display: none;
+            }
+        }
+        .nav-right{
+            display: none;
+        }
+    }
+}
+
+#sub_nav{
+    display: block;
+    background-color: #F6F1EB;
+    max-height: 0;  
+    overflow: hidden;
+    transition: all .7s ease;
+    ul{
+        li{
+            color:#696969;
+            padding: 6px 40px;
+            font-size: 1.1rem;
+             transition: all .2s ease;
+            
+            &:hover{
+                color: #000;
+            }
+        }
+    }
+
+    &.sub_active{
+        max-height: 500px;
+        transition: all 1.3s ease;
+
+    }
+
+    .sub_nav-right{
+        display: none;
+        .account{
+            margin-bottom: 6px;
+        }
+    }
+
+    @media screen and (max-width:992px) {
+        .sub_nav-right{
+            display: block;
+            
+        }
+    }
+}
+// Navbar end
+
+
+// accardion_section start
+#accardion_section{
+    .accardion_container{
+        margin: 60px auto;
+        // background-color: red;
+        max-width: 600px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+        .accardion-div{
+            border: 1px solid #6969699a;
+            padding:10px 20px;
+
+            .accardion_heading{
+                cursor: pointer;
+                padding: 10px 0;
+                display: flex;
+                gap: 10px;
+
+                i{
+                    font-size: 1.2rem;
+                    color: #696969;
+                }
+            }
+
+            .accordion_content{
+                max-height: 0;
+                overflow: hidden;
+                // transition: all .5s ease;
+
+                &.accardion-active{
+                    transition: all 1s ease;
+                    max-height: 500px;
+                }
+            }
+        }       
+    }
+}
+
+// accardion_section end
+
+
